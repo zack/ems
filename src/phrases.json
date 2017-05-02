@@ -1,0 +1,11 @@
+{ "phrases":
+  [
+    {
+      "words": ["alert", "verbal", "pain", "unresponsive"],
+      "desc": "Alertness scale"
+    },
+    { "words": ["airway", "breathing", "circulation"],
+      "desc": "Primary assessment steps"
+    }
+  ]
+}
