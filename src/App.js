@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button, FormControl, FormGroup, Glyphicon, InputGroup, Panel } from 'react-bootstrap';
+import { Button, FormControl, FormGroup, Glyphicon, InputGroup, PageHeader, Panel } from 'react-bootstrap';
 import './App.css';
 
 class App extends Component {
@@ -26,9 +26,12 @@ class App extends Component {
     return (
       <div className="App">
         <div className="text-center">
-          <h1> EMS Acronyms & Initialisms </h1>
+          <div className="float-left">
+            {timer}
+          </div>
+          <div className="h1"> EMS Acronyms & Initialisms </div>
+          <hr/>
         </div>
-        {timer}
         {phraseboxs}
       </div>
     );
@@ -44,13 +47,18 @@ class Phrasebox extends Component {
   }
 
   changeHandler(index, event) {
-    const current_vals = this.state.values;
-    let new_vals = current_vals.slice();
-    new_vals[index] = event.target.value;
+    let new_vals = this.state.values.slice();
+    new_vals[index] = event.target.value.trim();
 
     this.setState((prevState, props) => ({
       values: new_vals,
     }));
+  }
+
+  someValuesMatch(values) {
+    return this.props.word_arrays.reduce((acc, word_array, index) => {
+      return(acc || word_array.includes(values[index]));
+    }, false);
   }
 
   allValuesMatch(values) {
@@ -60,7 +68,16 @@ class Phrasebox extends Component {
   }
 
   render() {
-    const style = this.allValuesMatch(this.state.values) ? 'success' : 'info';
+    let style;
+
+    if (this.allValuesMatch(this.state.values)) {
+      style = 'success';
+    } else if (this.someValuesMatch(this.state.values)) {
+      style = 'warning';
+    } else {
+      style = 'danger';
+    }
+
     const header = <h2>{this.props.description}</h2>;
     const lines = this.props.word_arrays.map((word_array, i) => {
       const first_word = word_array[0];
@@ -82,12 +99,22 @@ class Phrasebox extends Component {
 }
 
 function WordLine(props) {
-  const validationState = props.words.includes(props.value) ? 'success' : '';
+  let validationState;
+
+  if (props.words.includes(props.value)) {
+    validationState = 'success';
+  } else if (props.value) {
+    validationState = 'warning';
+  } else {
+    validationState = 'error';
+  }
 
   return (
     <FormGroup validationState={validationState}>
       <InputGroup>
-        <InputGroup.Addon>{props.letter.toUpperCase()}</InputGroup.Addon>
+        <InputGroup.Addon>
+          <strong>{props.letter.toUpperCase()}</strong>
+        </InputGroup.Addon>
         <FormControl type="text" onChange={props.changeHandler}/>
       </InputGroup>
     </FormGroup>
@@ -172,7 +199,7 @@ class Timer extends Component {
 
     return(
       <div className="text-center">
-        <div className="block">
+        <div className="block timer-container">
           <div className={`timer ${timerBgClass} ${timerDispClass}`}>
             {`${minutes}:${seconds}`}
           </div>
@@ -180,12 +207,12 @@ class Timer extends Component {
         <div className="block timer-controls">
           <div className="block">
             <div>
-              <Button bsStyle="danger" bsSize="small" onClick={this.resetTimer.bind(this)}>
-                <Glyphicon glyph="stop" />
-              </Button>
-              {toggleButton}
               <Button bsStyle="primary" bsSize="small" onClick={this.toggleTimerDisplay.bind(this)}>
                 <Glyphicon glyph={timerDisplayIcon} />
+              </Button>
+              {toggleButton}
+              <Button bsStyle="danger" bsSize="small" onClick={this.resetTimer.bind(this)}>
+                <Glyphicon className="flip-h" glyph="repeat" />
               </Button>
             </div>
           </div>

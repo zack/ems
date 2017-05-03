@@ -1,11 +1,15 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
 }
 
 .block {
   display: block;
+}
+
+.float-left {
+  float: left;
 }
 
 .inline-block {
@@ -20,21 +24,26 @@ body {
   text-transform: uppercase;
 }
 
-.timer-controls button {
-  line-height: 1em;
-  margin: 0px 2px;
+.flip-h {
+  transform: scaleX(-1);
+}
+
+.timer-container {
+  position: absolute;
+  top: 6px;
+  left: 2px;
 }
 
 .timer {
-  border-radius: 3px;
+  border-radius: 4px 0px 0px 4px;
   border: 2px solid;
   display: inline-block;
   font-size: 50px;
-  font-weight: bold;
+  height: 57px;
   line-height: 1em;
   margin: 5px 10px;
-  padding: 7px 5px 0px;
-  width: 148px;
+  padding-bottom: 3px;
+  width: 214px;
 }
 
 .timer.running {
@@ -54,10 +63,52 @@ body {
   color: rgba(0,0,0,0);
 }
 
+.timer-controls {
+  left: 224px;
+  position: relative;
+  top: -9px;
+}
+
+.timer-controls button {
+  border-radius: 0;
+  display: block;
+  height: 19px;
+  margin: 0px 2px;
+}
+
+.timer-controls button:first-child {
+  border-radius: 0px 3px 0px 0px;
+}
+
+.timer-controls button:last-child {
+  border-radius: 0px 0px 3px 0px;
+}
+
+.timer-controls button span {
+  position: relative;
+  top: -4px;
+}
+
 .phrasebox {
   margin: 10px;
   text-align: center;
   width: 250px;
+}
+
+.phrasebox .panel-body {
+  padding: 10px 10px 0 10px;
+}
+
+.phrasebox.panel.panel-danger {
+  border-color: #A94442;
+}
+
+.phrasebox.panel.panel-warning {
+  border-color: #8A6D3B;
+}
+
+.phrasebox.panel.panel-success {
+  border-color: #3C763D;
 }
 
 .phrasebox-title {
@@ -65,7 +116,7 @@ body {
 }
 
 .phrasebox .form-group {
-  margin-bottom: 5px;
+  margin-bottom: 10px;
 }
 
 input {
