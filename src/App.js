@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button, Glyphicon, Panel } from 'react-bootstrap';
+import { Button, FormControl, FormGroup, Glyphicon, InputGroup, Panel } from 'react-bootstrap';
 import './App.css';
 
 class App extends Component {
@@ -60,7 +60,7 @@ class Phrasograph extends Component {
   }
 
   render() {
-    const style = this.allValuesMatch(this.state.values) ? 'success' : 'primary';
+    const style = this.allValuesMatch(this.state.values) ? 'success' : 'info';
     const header = <h2>{this.props.description}</h2>;
     const lines = this.props.word_arrays.map((word_array, i) => {
       const first_word = word_array[0];
@@ -82,15 +82,15 @@ class Phrasograph extends Component {
 }
 
 function WordLine(props) {
-  const statusClass = props.words.includes(props.value) ? 'correct' : '';
+  const validationState = props.words.includes(props.value) ? 'success' : '';
 
   return (
-    <div className="line">
-      <div className="letter uppercase inline-block">
-        {props.letter}
-      </div>
-      <input className={`inline-block ${statusClass}`} onChange={props.changeHandler}></input>
-    </div>
+    <FormGroup validationState={validationState}>
+      <InputGroup>
+        <InputGroup.Addon>{props.letter.toUpperCase()}</InputGroup.Addon>
+        <FormControl type="text" onChange={props.changeHandler}/>
+      </InputGroup>
+    </FormGroup>
   );
 }
 

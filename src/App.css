@@ -58,12 +58,6 @@ body {
   width: 250px;
 }
 
-.phrasograph.success {
-  background-color: #ddfcdd;
-  border-color: green;
-  border-width: 3px;
-}
-
 .phrasograph-title {
   margin-bottom: 10px;
 }
