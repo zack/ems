@@ -11,9 +11,9 @@ class App extends Component {
   };
 
   render() {
-    const phrasographs = this.state.phrases.map((phrase) => {
+    const phraseboxs = this.state.phrases.map((phrase) => {
       const initials = getInitials(phrase.words);
-      return <Phrasograph
+      return <Phrasebox
         description={phrase.desc}
         initials={initials}
         key={initials}
@@ -21,21 +21,21 @@ class App extends Component {
       />;
     });
 
-    const clock = <Clock />;
+    const timer = <Timer />;
 
     return (
       <div className="App">
         <div className="text-center">
           <h1> EMS Acronyms & Initialisms </h1>
         </div>
-        {clock}
-        {phrasographs}
+        {timer}
+        {phraseboxs}
       </div>
     );
   }
 }
 
-class Phrasograph extends Component {
+class Phrasebox extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -74,7 +74,7 @@ class Phrasograph extends Component {
     });
 
     return(
-      <Panel header={header} bsStyle={style} className='phrasograph'>
+      <Panel header={header} bsStyle={style} className='phrasebox'>
         {lines}
       </Panel>
     );
@@ -94,7 +94,7 @@ function WordLine(props) {
   );
 }
 
-class Clock extends Component {
+class Timer extends Component {
   constructor(props) {
     super(props);
 
@@ -156,6 +156,20 @@ class Clock extends Component {
     const timerDispClass = this.state.visible ? 'visible' : 'secret';
     const timerDisplayIcon = this.state.visible ? 'eye-close' : 'eye-open';
 
+    let toggleButton;
+
+    if (this.state.running) {
+      toggleButton =
+        <Button bsStyle="warning" bsSize="small" onClick={this.pauseTimer.bind(this)}>
+          <Glyphicon glyph="pause" />
+        </Button>
+    } else {
+      toggleButton =
+        <Button bsStyle="success" bsSize="small" onClick={this.startTimer.bind(this)}>
+          <Glyphicon glyph="play" />
+        </Button>
+    }
+
     return(
       <div className="text-center">
         <div className="block">
@@ -165,18 +179,15 @@ class Clock extends Component {
         </div>
         <div className="block timer-controls">
           <div className="block">
-            <Button bsStyle="danger" bsSize="small" onClick={this.resetTimer.bind(this)}>
-              <Glyphicon glyph="stop" />
-            </Button>
-            <Button bsStyle="warning" bsSize="small" onClick={this.pauseTimer.bind(this)}>
-              <Glyphicon glyph="pause" />
-            </Button>
-            <Button bsStyle="success" bsSize="small" onClick={this.startTimer.bind(this)}>
-              <Glyphicon glyph="play" />
-            </Button>
-            <Button bsStyle="primary" bsSize="small" onClick={this.toggleTimerDisplay.bind(this)}>
-              <Glyphicon glyph={timerDisplayIcon} />
-            </Button>
+            <div>
+              <Button bsStyle="danger" bsSize="small" onClick={this.resetTimer.bind(this)}>
+                <Glyphicon glyph="stop" />
+              </Button>
+              {toggleButton}
+              <Button bsStyle="primary" bsSize="small" onClick={this.toggleTimerDisplay.bind(this)}>
+                <Glyphicon glyph={timerDisplayIcon} />
+              </Button>
+            </div>
           </div>
         </div>
       </div>

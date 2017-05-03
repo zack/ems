@@ -28,7 +28,6 @@ body {
 .timer {
   border-radius: 3px;
   border: 2px solid;
-  box-shadow: 1px 1px 1px black;
   display: inline-block;
   font-size: 50px;
   font-weight: bold;
@@ -40,26 +39,33 @@ body {
 
 .timer.running {
   border-color: #3E8F3E;
-  background-image: linear-gradient(to bottom,#5cb85c 0,#419641 100%);
+  background-color: #DFF0D8;
+  /* background-image: linear-gradient(to bottom,#5cb85c 0,#419641 100%); */
 }
 
 .timer.stopped {
-  border-color: #E38D13;
-  background-image: linear-gradient(to bottom,#f0ad4e 0,#eb9316 100%);
+  border-color: #FAEBCC;
+  background-color: #FCF8E3;
+  /* border-color: #E38D13; */
+  /* background-image: linear-gradient(to bottom,#f0ad4e 0,#eb9316 100%); */
 }
 
 .timer.secret {
   color: rgba(0,0,0,0);
 }
 
-.phrasograph {
+.phrasebox {
   margin: 10px;
   text-align: center;
   width: 250px;
 }
 
-.phrasograph-title {
+.phrasebox-title {
   margin-bottom: 10px;
+}
+
+.phrasebox .form-group {
+  margin-bottom: 5px;
 }
 
 input {
