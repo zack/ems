@@ -13,20 +13,23 @@ class App extends Component {
     const phrasographs = this.state.phrases.map((phrase) => {
       const initials = getInitials(phrase.words);
       return <Phrasograph description={phrase.desc}
-      initials={initials}
-      key={initials}
-      word_arrays={phrase.words}
-        />;
+                          initials={initials}
+                          key={initials}
+                          word_arrays={phrase.words}
+             />;
     });
 
     const clock = <Clock />
 
-      return (
-        <div className="App">
+    return (
+      <div className="App">
+        <div className="text-center">
+          <h1> EMS Acronyms & Initialisms </h1>
+        </div>
         {clock}
         {phrasographs}
-        </div>
-      );
+      </div>
+    );
   }
 }
 
@@ -35,15 +38,15 @@ class Phrasograph extends Component {
     const lines = this.props.word_arrays.map((word_array) => {
       const first_word = word_array[0];
       return <WordLine words={word_array}
-      letter={first_word[0]}
-      key={`${this.props.initials}_${first_word}`}
-        />;
+                       letter={first_word[0]}
+                       key={`${this.props.initials}_${first_word}`}
+             />;
     });
 
     return(
       <div className="phrasograph">
-      <div className="title"> {this.props.description} </div>
-      {lines}
+        <div className="phrasograph-title"> {this.props.description} </div>
+        {lines}
       </div>
     );
   }
@@ -72,8 +75,8 @@ class WordLine extends Component {
 
     return(
       <div className="line">
-      <div className="letter uppercase inline-block"> {this.props.letter} </div>
-      <input className={`inline-block ${statusClass}`} onChange={this.changeHandler.bind(this)}></input>
+        <div className="letter uppercase inline-block"> {this.props.letter} </div>
+        <input className={`inline-block ${statusClass}`} onChange={this.changeHandler.bind(this)}></input>
       </div>
     );
   }
@@ -141,17 +144,17 @@ class Clock extends Component {
     const timerDispText = this.state.hidden ? 'Show' : 'Hide';
 
     return(
-      <div className="timer-container">
+      <div className="text-center">
         <div className="block">
           <div className={`timer ${timerBgClass} ${timerDispClass}`}>{`${minutes}:${seconds}`}</div>
         </div>
         <div className="block">
-          <div class="block">
+          <div className="block">
             <button onClick={this.pauseTimer.bind(this)}> Pause </button>
             <button onClick={this.resetTimer.bind(this)}> Reset </button>
             <button onClick={this.startTimer.bind(this)}> Start </button>
           </div>
-          <div class="block">
+          <div className="block">
             <button onClick={this.toggleTimerDisplay.bind(this)}> {timerDispText} Timer </button>
           </div>
         </div>

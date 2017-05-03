@@ -1,3 +1,9 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
 .timer {
   border: 2px solid black;
   display: inline-block;
@@ -7,12 +13,20 @@
   padding: 7px 5px 0px;
 }
 
-.timer-container {
+.block {
+  display: block;
+}
+
+.inline-block {
+  display: inline-block;
+}
+
+.text-center {
   text-align: center;
 }
 
-.block {
-  display: block;
+.uppercase {
+  text-transform: uppercase;
 }
 
 .timer.running {
@@ -27,6 +41,32 @@
   color: rgba(0,0,0,0);
 }
 
-.uppercase {
-  text-transform: uppercase;
+.phrasograph {
+  border-radius: 10px;
+  border: 2px solid #186aa9;
+  margin: 10px;
+  padding: 15px 5px 10px;
+  text-align: center;
+  width: 250px;
+}
+
+.phrasograph-title {
+  margin-bottom: 10px;
+}
+
+input {
+  border: 1px solid #d8d8d8;
+}
+
+input.correct {
+  background-color: #a9e6a9;
+  border: 1px solid green;
+}
+
+.letter {
+  margin-right: 5px;
+}
+
+.line {
+  margin-bottom: 5px;
 }
