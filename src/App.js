@@ -60,8 +60,8 @@ class Phrasograph extends Component {
   }
 
   render() {
-    const successClass = this.allValuesMatch(this.state.values) ? 'success' : '';
-
+    const style = this.allValuesMatch(this.state.values) ? 'success' : 'primary';
+    const header = <h2>{this.props.description}</h2>;
     const lines = this.props.word_arrays.map((word_array, i) => {
       const first_word = word_array[0];
       return <WordLine
@@ -74,12 +74,9 @@ class Phrasograph extends Component {
     });
 
     return(
-      <div className={`phrasograph ${successClass}`}>
-        <div className="phrasograph-title">
-          {this.props.description}
-        </div>
+      <Panel header={header} bsStyle={style} className='phrasograph'>
         {lines}
-      </div>
+      </Panel>
     );
   }
 }
