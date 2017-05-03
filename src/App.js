@@ -84,7 +84,9 @@ class Clock extends Component {
     super(props);
 
     this.state = {
-      seconds: 0,
+      counter: 0,
+      hidden: false,
+      running: true,
     };
   }
 
@@ -99,19 +101,60 @@ class Clock extends Component {
     clearInterval(this.timerID);
   }
 
-  tick() {
+  pauseTimer() {
     this.setState({
-      seconds: this.state.seconds + 1,
+      running: false,
     });
   }
 
+  resetTimer() {
+    this.setState({
+      counter: 0,
+    });
+  }
+
+  startTimer() {
+    this.setState({
+      running: true,
+    });
+  }
+
+  toggleTimerDisplay() {
+    this.setState((prevState, props) => ({
+      hidden: !prevState.hidden,
+    }));
+  }
+
+  tick() {
+    if(this.state.running) {
+      this.setState((prevState, props) => ({
+        counter: prevState.counter + 1,
+      }));
+    }
+  }
+
   render() {
-    const seconds = ('00' + this.state.seconds % 60).slice(-2);
-    const minutes = ('00' + Math.floor(this.state.seconds / 60)).slice(-2);
+    const seconds = ('00' + this.state.counter % 60).slice(-2);
+    const minutes = ('00' + Math.floor(this.state.counter / 60)).slice(-2);
+    const timerBgClass = this.state.running ? 'running' : 'stopped';
+    const timerDispClass = this.state.hidden ? 'hidden' : '';
+    const timerDispText = this.state.hidden ? 'Show' : 'Hide';
 
     return(
       <div className="timer-container">
-        <div className="timer">{`${minutes}:${seconds}`}</div>
+        <div className="block">
+          <div className={`timer ${timerBgClass} ${timerDispClass}`}>{`${minutes}:${seconds}`}</div>
+        </div>
+        <div className="block">
+          <div class="block">
+            <button onClick={this.pauseTimer.bind(this)}> Pause </button>
+            <button onClick={this.resetTimer.bind(this)}> Reset </button>
+            <button onClick={this.startTimer.bind(this)}> Start </button>
+          </div>
+          <div class="block">
+            <button onClick={this.toggleTimerDisplay.bind(this)}> {timerDispText} Timer </button>
+          </div>
+        </div>
       </div>
     );
   }

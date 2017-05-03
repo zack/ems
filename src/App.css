@@ -11,6 +11,22 @@
   text-align: center;
 }
 
+.block {
+  display: block;
+}
+
+.timer.running {
+  background-color: #B3F8E4;
+}
+
+.timer.stopped {
+  background-color: #F8B3B3;
+}
+
+.timer.hidden {
+  color: rgba(0,0,0,0);
+}
+
 .uppercase {
   text-transform: uppercase;
 }
