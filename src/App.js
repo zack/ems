@@ -35,18 +35,45 @@ class App extends Component {
 }
 
 class Phrasograph extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      values: this.props.word_arrays.map(() => ''),
+    }
+  }
+
+  changeHandler(index, event) {
+    const current_vals = this.state.values;
+    let new_vals = current_vals.slice();
+    new_vals[index] = event.target.value;
+
+    this.setState((prevState, props) => ({
+      values: new_vals,
+    }));
+  }
+
+  allValuesMatch(values) {
+    return this.props.word_arrays.reduce((acc, word_array, index) => {
+      return(acc && word_array.includes(values[index]));
+    }, true);
+  }
+
   render() {
-    const lines = this.props.word_arrays.map((word_array) => {
+    const successClass = this.allValuesMatch(this.state.values) ? 'success' : '';
+
+    const lines = this.props.word_arrays.map((word_array, i) => {
       const first_word = word_array[0];
       return <WordLine
-        words={word_array}
-        letter={first_word[0]}
+        changeHandler={(e) => this.changeHandler(i, e)}
         key={`${this.props.initials}_${first_word}`}
+        letter={first_word[0]}
+        value={this.state.values[i]}
+        words={word_array}
       />;
     });
 
     return(
-      <div className="phrasograph">
+      <div className={`phrasograph ${successClass}`}>
         <div className="phrasograph-title">
           {this.props.description}
         </div>
@@ -56,36 +83,17 @@ class Phrasograph extends Component {
   }
 }
 
-class WordLine extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      value: '',
-    };
-  }
+function WordLine(props) {
+  const statusClass = props.words.includes(props.value) ? 'correct' : '';
 
-  changeHandler(e) {
-    this.setState({
-      value: e.target.value,
-    });
-  }
-
-  getStatusClass(value) {
-    return this.props.words.includes(value) ? 'correct' : '';
-  }
-
-  render() {
-    const statusClass = this.getStatusClass(this.state.value.toLowerCase());
-
-    return(
-      <div className="line">
-        <div className="letter uppercase inline-block">
-          {this.props.letter}
-        </div>
-        <input className={`inline-block ${statusClass}`} onChange={this.changeHandler.bind(this)}></input>
+  return (
+    <div className="line">
+      <div className="letter uppercase inline-block">
+        {props.letter}
       </div>
-    );
-  }
+      <input className={`inline-block ${statusClass}`} onChange={props.changeHandler}></input>
+    </div>
+  );
 }
 
 class Clock extends Component {

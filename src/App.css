@@ -44,10 +44,17 @@ body {
 .phrasograph {
   border-radius: 10px;
   border: 2px solid #186aa9;
+  box-sizing: border-box;
   margin: 10px;
   padding: 15px 5px 10px;
   text-align: center;
   width: 250px;
+}
+
+.phrasograph.success {
+  background-color: #ddfcdd;
+  border-color: green;
+  border-width: 3px;
 }
 
 .phrasograph-title {
