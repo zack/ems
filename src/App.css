@@ -29,6 +29,11 @@ body {
   text-transform: uppercase;
 }
 
+.timer-controls button {
+  line-height: 1em;
+  margin: 2px 1px;
+}
+
 .timer.running {
   background-color: #B3F8E4;
 }
@@ -37,7 +42,7 @@ body {
   background-color: #F8B3B3;
 }
 
-.timer.hidden {
+.timer.secret {
   color: rgba(0,0,0,0);
 }
 

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Button } from 'react-bootstrap';
 import './App.css';
 
 class App extends Component {
@@ -154,7 +155,7 @@ class Clock extends Component {
     const seconds = ('00' + this.state.counter % 60).slice(-2);
     const minutes = ('00' + Math.floor(this.state.counter / 60)).slice(-2);
     const timerBgClass = this.state.running ? 'running' : 'stopped';
-    const timerDispClass = this.state.hidden ? 'hidden' : '';
+    const timerDispClass = this.state.hidden ? 'secret' : '';
     const timerDispText = this.state.hidden ? 'Show' : 'Hide';
 
     return(
@@ -164,16 +165,22 @@ class Clock extends Component {
             {`${minutes}:${seconds}`}
           </div>
         </div>
-        <div className="block">
+        <div className="block timer-controls">
           <div className="block">
-            <button onClick={this.pauseTimer.bind(this)}> Pause </button>
-            <button onClick={this.resetTimer.bind(this)}> Reset </button>
-            <button onClick={this.startTimer.bind(this)}> Start </button>
+            <Button bsStyle="danger" bsSize="small" onClick={this.pauseTimer.bind(this)}>
+                Pause
+            </Button>
+            <Button bsStyle="warning" bsSize="small" onClick={this.resetTimer.bind(this)}>
+                Reset
+            </Button>
+            <Button bsStyle="success" bsSize="small" onClick={this.startTimer.bind(this)}>
+                Start
+            </Button>
           </div>
           <div className="block">
-            <button onClick={this.toggleTimerDisplay.bind(this)}>
-              {timerDispText} Timer
-            </button>
+            <Button bsStyle="primary" bsSize="small" onClick={this.toggleTimerDisplay.bind(this)}>
+                {timerDispText} Timer
+            </Button>
           </div>
         </div>
       </div>
