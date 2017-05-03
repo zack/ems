@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button } from 'react-bootstrap';
+import { Button, Glyphicon, Panel } from 'react-bootstrap';
 import './App.css';
 
 class App extends Component {
@@ -103,8 +103,8 @@ class Clock extends Component {
 
     this.state = {
       counter: 0,
-      hidden: false,
-      running: true,
+      visible: true,
+      running: false,
     };
   }
 
@@ -128,6 +128,7 @@ class Clock extends Component {
   resetTimer() {
     this.setState({
       counter: 0,
+      running: false,
     });
   }
 
@@ -139,7 +140,7 @@ class Clock extends Component {
 
   toggleTimerDisplay() {
     this.setState((prevState, props) => ({
-      hidden: !prevState.hidden,
+      visible: !prevState.visible,
     }));
   }
 
@@ -155,8 +156,8 @@ class Clock extends Component {
     const seconds = ('00' + this.state.counter % 60).slice(-2);
     const minutes = ('00' + Math.floor(this.state.counter / 60)).slice(-2);
     const timerBgClass = this.state.running ? 'running' : 'stopped';
-    const timerDispClass = this.state.hidden ? 'secret' : '';
-    const timerDispText = this.state.hidden ? 'Show' : 'Hide';
+    const timerDispClass = this.state.visible ? 'visible' : 'secret';
+    const timerDisplayIcon = this.state.visible ? 'eye-close' : 'eye-open';
 
     return(
       <div className="text-center">
@@ -167,19 +168,17 @@ class Clock extends Component {
         </div>
         <div className="block timer-controls">
           <div className="block">
-            <Button bsStyle="danger" bsSize="small" onClick={this.pauseTimer.bind(this)}>
-                Pause
+            <Button bsStyle="danger" bsSize="small" onClick={this.resetTimer.bind(this)}>
+              <Glyphicon glyph="stop" />
             </Button>
-            <Button bsStyle="warning" bsSize="small" onClick={this.resetTimer.bind(this)}>
-                Reset
+            <Button bsStyle="warning" bsSize="small" onClick={this.pauseTimer.bind(this)}>
+              <Glyphicon glyph="pause" />
             </Button>
             <Button bsStyle="success" bsSize="small" onClick={this.startTimer.bind(this)}>
-                Start
+              <Glyphicon glyph="play" />
             </Button>
-          </div>
-          <div className="block">
             <Button bsStyle="primary" bsSize="small" onClick={this.toggleTimerDisplay.bind(this)}>
-                {timerDispText} Timer
+              <Glyphicon glyph={timerDisplayIcon} />
             </Button>
           </div>
         </div>

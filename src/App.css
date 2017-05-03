@@ -4,15 +4,6 @@ body {
   font-family: sans-serif;
 }
 
-.timer {
-  border: 2px solid black;
-  display: inline-block;
-  font-size: 50px;
-  font-weight: bold;
-  margin: 10px;
-  padding: 7px 5px 0px;
-}
-
 .block {
   display: block;
 }
@@ -31,15 +22,30 @@ body {
 
 .timer-controls button {
   line-height: 1em;
-  margin: 2px 1px;
+  margin: 0px 2px;
+}
+
+.timer {
+  border-radius: 3px;
+  border: 2px solid;
+  box-shadow: 1px 1px 1px black;
+  display: inline-block;
+  font-size: 50px;
+  font-weight: bold;
+  line-height: 1em;
+  margin: 5px 10px;
+  padding: 7px 5px 0px;
+  width: 148px;
 }
 
 .timer.running {
-  background-color: #B3F8E4;
+  border-color: #3E8F3E;
+  background-image: linear-gradient(to bottom,#5cb85c 0,#419641 100%);
 }
 
 .timer.stopped {
-  background-color: #F8B3B3;
+  border-color: #E38D13;
+  background-image: linear-gradient(to bottom,#f0ad4e 0,#eb9316 100%);
 }
 
 .timer.secret {
@@ -50,7 +56,7 @@ body {
   border-radius: 10px;
   border: 2px solid #186aa9;
   box-sizing: border-box;
-  margin: 10px;
+  margin-bottom: 4px;
   padding: 15px 5px 10px;
   text-align: center;
   width: 250px;
