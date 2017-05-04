@@ -47,8 +47,9 @@ class App extends Component {
                 supraventricular tachycardia, as SVT, you might expect to enter
                 "supra," "ventricular," "tachycardia." Some answers require two
                 words, in this case the words can be entered in either order
-                and no punctuation is necessary. Please direct mistakes,
-                suggestions, and comments to zack@youngren.io.
+                and no punctuation, articles, or extra words are necessary (so
+                enter "signs symptons" not "signs and symptons").  Please
+                direct mistakes, suggestions, and comments to zack@youngren.io.
                 <a href="https://github.com/zack/ems"> Code here. </a>
             </small></h1>
           </div>
