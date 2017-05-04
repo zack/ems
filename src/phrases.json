@@ -263,6 +263,16 @@
     },
     {
       "words": [
+        ["pain", "pallor", "pulse", "pulseless", "paralysis", "paralyse", "parasthesia"],
+        ["pallor", "pulse", "pulseless", "paralysis", "paralyse", "parasthesia", "pain"],
+        ["pulse", "pulseless", "paralysis", "paralyse", "parasthesia", "pain", "pallor"],
+        ["pulseless", "paralysis", "paralyse", "parasthesia", "pain", "pallor", "pulse"],
+        ["parasthesia", "pain", "pallor", "pulse", "pulseless", "paralysis", "paralyse"]
+      ],
+      "desc": "Five Ps of compartment syndrome"
+    },
+    {
+      "words": [
         ["respiratory", "respiration"],
         ["neuro", "neurogenic"],
         ["cardiac", "cardiogenic"],
