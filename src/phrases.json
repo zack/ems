@@ -22,7 +22,7 @@
         ["deformities"],
         ["contusions"],
         ["abrasions"],
-        ["penetrations"],
+        ["penetrations", "punctures"],
         ["burns"],
         ["lacerations"],
         ["swelling"],
