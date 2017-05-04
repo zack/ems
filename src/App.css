@@ -90,6 +90,7 @@ body {
 }
 
 .phrasebox {
+  display: inline-block;
   margin: 10px;
   text-align: center;
   width: 250px;
@@ -123,8 +124,12 @@ input {
   border: 1px solid #d8d8d8;
 }
 
+.input-group {
+  width: 228px;
+}
+
 .input-group-addon {
-  font-family: monospace;
+  width: 36px;
 }
 
 input.correct {
