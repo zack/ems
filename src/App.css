@@ -29,20 +29,15 @@ body {
 }
 
 .timer-container {
-  position: absolute;
-  top: 6px;
-  left: 2px;
+  display: inline-block;
 }
 
 .timer {
   border-radius: 4px 0px 0px 4px;
   border: 2px solid;
   display: inline-block;
-  font-size: 50px;
-  height: 57px;
-  line-height: 1em;
-  margin: 5px 10px;
-  padding-bottom: 3px;
+  font-size: 36px;
+  height: 60px;
   width: 214px;
 }
 
@@ -63,30 +58,23 @@ body {
   color: rgba(0,0,0,0);
 }
 
-.timer-controls {
-  left: 224px;
-  position: relative;
-  top: -9px;
+.timer-container .controls {
+  width: 34px;
 }
 
-.timer-controls button {
+.timer-container .controls button {
   border-radius: 0;
-  display: block;
-  height: 19px;
-  margin: 0px 2px;
+  height: 20px;
+  margin-bottom: -26px;
+  padding: 0px 10px;
 }
 
-.timer-controls button:first-child {
+.timer-container .controls button:first-child {
   border-radius: 0px 3px 0px 0px;
 }
 
-.timer-controls button:last-child {
+.timer-container .controls button:last-child {
   border-radius: 0px 0px 3px 0px;
-}
-
-.timer-controls button span {
-  position: relative;
-  top: -4px;
 }
 
 .phrasebox {

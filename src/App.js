@@ -26,10 +26,12 @@ class App extends Component {
     return (
       <div className="App">
         <div className="text-center">
-          <div className="float-left">
+          <div className="timer-container">
             {timer}
           </div>
-          <div className="h1"> EMS Acronyms & Initialisms </div>
+          <div className="header-container">
+            <div className="h1"> EMS Acronyms & Initialisms </div>
+          </div>
           <hr/>
         </div>
         {phraseboxs}
@@ -198,24 +200,18 @@ class Timer extends Component {
     }
 
     return(
-      <div className="text-center">
-        <div className="block timer-container">
-          <div className={`timer ${timerBgClass} ${timerDispClass}`}>
-            {`${minutes}:${seconds}`}
-          </div>
+      <div>
+        <div className={`inline-block timer ${timerBgClass} ${timerDispClass}`}>
+          <span>{`${minutes}:${seconds}`}</span>
         </div>
-        <div className="block timer-controls">
-          <div className="block">
-            <div>
-              <Button bsStyle="primary" bsSize="small" onClick={this.toggleTimerDisplay.bind(this)}>
-                <Glyphicon glyph={timerDisplayIcon} />
-              </Button>
-              {toggleButton}
-              <Button bsStyle="danger" bsSize="small" onClick={this.resetTimer.bind(this)}>
-                <Glyphicon className="flip-h" glyph="repeat" />
-              </Button>
-            </div>
-          </div>
+        <div className="inline-block controls">
+          <Button bsStyle="primary" bsSize="small" onClick={this.toggleTimerDisplay.bind(this)}>
+            <Glyphicon glyph={timerDisplayIcon} />
+          </Button>
+          {toggleButton}
+          <Button bsStyle="danger" bsSize="small" onClick={this.resetTimer.bind(this)}>
+            <Glyphicon className="flip-h" glyph="repeat" />
+          </Button>
         </div>
       </div>
     );
