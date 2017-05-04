@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Masonry from 'react-masonry-component';
 import { Button, FormControl, FormGroup, Glyphicon, InputGroup, PageHeader, Panel } from 'react-bootstrap';
 import './App.css';
 
@@ -11,7 +12,11 @@ class App extends Component {
   };
 
   render() {
-    const phraseboxs = this.state.phrases.map((phrase) => {
+    // Array.sort modifies argument. Ew.
+    let temp_phrases = this.state.phrases.slice();
+    const random_phrases = temp_phrases.sort(() => { return 0.5 - Math.random() });
+
+    const phraseboxes = random_phrases.map((phrase) => {
       const initials = getInitials(phrase.words);
       return <Phrasebox
         description={phrase.desc}
@@ -22,6 +27,12 @@ class App extends Component {
     });
 
     const timer = <Timer />;
+    const masonryOptions = {
+      fitWidth: true,
+      gutter: 15,
+      itemSelector: '.phrasebox',
+      transitionDuration: 0,
+    };
 
     return (
       <div className="App">
@@ -30,11 +41,29 @@ class App extends Component {
             {timer}
           </div>
           <div className="header-container">
-            <div className="h1"> EMS Acronyms & Initialisms </div>
+            <h1> EMS Acronyms & Initialisms </h1>
+            <h1><small>
+                Some words are split up into two. As an example, for
+                supraventricular tachycardia, as SVT, you might expect to enter
+                "supra," "ventricular," "tachycardia." Some answers require two
+                words, in this case the words can be entered in either order
+                and no punctuation is necessary. Please direct mistakes,
+                suggestions, and comments to zack@youngren.io.
+                <a href="https://github.com/zack/ems"> Code here. </a>
+            </small></h1>
           </div>
           <hr/>
         </div>
-        {phraseboxs}
+        <div className="phrasebox-container">
+          <Masonry
+            className={'my-gallery-class'} // default ''
+            options={masonryOptions}
+            disableImagesLoaded={false} // default false
+            updateOnEachImageLoad={false} // default false and works only if disableImagesLoaded is false
+          >
+            {phraseboxes}
+          </Masonry>
+        </div>
       </div>
     );
   }

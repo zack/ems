@@ -8,10 +8,6 @@ body {
   display: block;
 }
 
-.float-left {
-  float: left;
-}
-
 .inline-block {
   display: inline-block;
 }
@@ -77,11 +73,18 @@ body {
   border-radius: 0px 0px 3px 0px;
 }
 
+.my-gallery-class {
+  margin: 0 auto;
+}
+
 .phrasebox {
-  display: inline-block;
-  margin: 10px;
   text-align: center;
   width: 250px;
+  margin-bottom: 15px;
+}
+
+.phrasebox .panel-heading {
+  height: 4em;
 }
 
 .phrasebox .panel-body {

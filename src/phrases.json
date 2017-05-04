@@ -2,12 +2,40 @@
   [
     {
       "words": [
-        ["alert"],
-        ["verbal", "vocal"],
-        ["pain", "painful"],
-        ["unresponsive"]
+        ["respitory", "respiration"],
+        ["rate"]
       ],
-      "desc": "Alertness scale"
+      "desc": "How quickly your patient is breathing"
+    },
+    {
+      "words": [
+        ["trachea", "tracheal"],
+        ["deviation"]
+      ],
+      "desc": "Might be caused by a pneumothorax"
+    },
+    {
+      "words": [
+        ["myocardial"],
+        ["infarction"]
+      ],
+      "desc": "Death of heart tissue"
+    },
+    {
+      "words": [
+        ["body"],
+        ["substance"],
+        ["isolation"]
+      ],
+      "desc": "Keeping you safe"
+    },
+    {
+      "words": [
+        ["diabetic"],
+        ["keto"],
+        ["acidosis"]
+      ],
+      "desc": "If your patient doesn't take their insulin, perhaps"
     },
     {
       "words": [
@@ -19,15 +47,286 @@
     },
     {
       "words": [
-        ["deformities"],
-        ["contusions"],
-        ["abrasions"],
-        ["penetrations", "punctures"],
-        ["burns"],
-        ["lacerations"],
+        ["nature"],
+        ["of"],
+        ["illness"]
+      ],
+      "desc": "How your patient is sick"
+    },
+    {
+      "words": [
+        ["mechanism"],
+        ["of"],
+        ["injury"]
+      ],
+      "desc": "How your patient was injured"
+    },
+    {
+      "words": [
+        ["history"],
+        ["present"],
+        ["illness"]
+      ],
+      "desc": "Recent progression of the patient's state"
+    },
+    {
+      "words": [
+        ["bag"],
+        ["valve"],
+        ["mask"]
+      ],
+      "desc": "Used to manually ventilate your patient"
+    },
+    {
+      "words": [
+        ["systolic", "systole"],
+        ["blood"],
+        ["pressure"]
+
+      ],
+      "desc": "Measured when the heart squeezes"
+    },
+    {
+      "words": [
+        ["diastolic", "diastole"],
+        ["blood"],
+        ["pressure"]
+      ],
+      "desc": "Measured when the heart relaxes"
+    },
+    {
+      "words": [
+        ["metered"],
+        ["dose"],
+        ["inhaler"]
+      ],
+      "desc": "Prescribed for use for respitory illness"
+    },
+    {
+      "words": [
+        ["jugular"],
+        ["vein"],
+        ["distention"]
+      ],
+      "desc": "Caused by backup of the blood to the heart"
+    },
+    {
+      "words": [
+        ["circulation"],
+        ["sensation"],
+        ["movement"]
+      ],
+      "desc": "Quick check for extremities"
+    },
+    {
+      "words": [
+        ["level"],
+        ["of"],
+        ["consciousness"]
+      ],
+      "desc": "Your patient's awareness"
+    },
+    {
+      "words": [
+        ["rate"],
+        ["rhythm"],
+        ["quality"]
+      ],
+      "desc": "Presentation of a patient's breathing or pulse"
+    },
+    {
+      "words": [
+        ["cerebro", "cerebral"],
+        ["spinal"],
+        ["fluid"]
+      ],
+      "desc": "Bad if it leaks"
+    },
+    {
+      "words": [
+        ["naso"],
+        ["pharyngeal", "pharynx"],
+        ["airway"]
+      ],
+      "desc": "For use only with unresponsive patients"
+    },
+    {
+      "words": [
+        ["oro", "oral"],
+        ["pharyngeal", "pharynx"],
+        ["airway"]
+      ],
+      "desc": "For use only with unresponsive patients"
+    },
+    {
+      "words": [
+        ["congestive"],
+        ["heart"],
+        ["failure"]
+      ],
+      "desc": "Perhaps caused by an MI"
+    },
+    {
+      "words": [
+        ["ice"],
+        ["compression", "compress"],
+        ["elevation", "elevate"],
+        ["splint"]
+      ],
+      "desc": "Common response for injuries"
+    },
+    {
+      "words": [
+        ["alert"],
+        ["verbal", "vocal"],
+        ["pain", "painful"],
+        ["unresponsive"]
+      ],
+      "desc": "Alertness scale"
+    },
+    {
+      "words": [
+        ["chronic"],
+        ["obstructive"],
+        ["pulmonary"],
+        ["disease"]
+      ],
+      "desc": "Result of direct lung and airway damage"
+    },
+    {
+      "words": [
+        ["high"],
+        ["altitude"],
+        ["pulmonary"],
+        ["edema"]
+      ],
+      "desc": "From traveling to high altitudes"
+    },
+    {
+      "words": [
+        ["high"],
+        ["altitude"],
+        ["cerebral"],
+        ["edema"]
+      ],
+      "desc": "From traveling to high altitudes"
+    },
+    {
+      "words": [
+        ["direct pressure"],
+        ["elevation", "elevate"],
+        ["proximal pressure", "proximal pressure point", "proximal pressure point"],
+        ["tourniquet"]
+      ],
+      "desc": "To control external bleeding"
+    },
+    {
+      "words": [
+        ["rigid", "rigidity"],
+        ["tender", "tenderness"],
+        ["guarding"],
+        ["distension"],
+        ["mass", "masses"]
+      ],
+      "desc": "Abdominal checks"
+    },
+    {
+      "words": [
+        ["pupil", "pupils"],
+        ["equal", "equality"],
+        ["round", "roundness"],
+        ["reactive", "reactivity", "reactivity to"],
+        ["light", "to light"]
+      ],
+      "desc": "Eye checks"
+    },
+    {
+      "words": [
+        ["patient"],
+        ["medication", "medicine"],
+        ["route"],
+        ["time"],
+        ["dose", "dosage"]
+      ],
+      "desc": "The Five Rights"
+    },
+    {
+      "words": [
+        ["salivation"],
+        ["lacrimation"],
+        ["urination"],
+        ["defacation"],
+        ["gastric", "gastric upset"],
+        ["emesis"]
+      ],
+      "desc": "Organophosphate poisoning symptoms"
+    },
+    {
+      "words": [
+        ["respiratory", "respiration"],
+        ["neuro", "neurogenic"],
+        ["cardiac", "cardiogenic"],
+        ["hypovolemic", "hypovolemia"],
+        ["anaphylaxis"],
+        ["mabolic", "metabolism"],
+        ["psychogenic"],
+        ["septic"]
+      ],
+      "desc": "Types of shock"
+    },
+    {
+      "words": [
+        ["alcohol acidosis", "acidosis alcohol"],
+        ["epilepsy environment", "environmental epilepsy"],
+        ["infection"],
+        ["overdose"],
+        ["uremia"],
+        ["trauma"],
+        ["insulin"],
+        ["psychogenic", "psychological"],
+        ["stroke"]
+      ],
+      "desc": "Causes of altered mental status"
+    },
+    {
+      "words": [
+        ["onset"],
+        ["provoke palliate", "palliate provoke", "palliative provoke", "provoke palliative"],
+        ["quality"],
+        [
+          "region radiate", "region radiation", "region radiates",
+          "radiate region", "radiation region", "radiates region"
+        ],
+        ["severe", "severity"],
+        ["time"]
+      ],
+      "desc": "Part of the focused assessment"
+    },
+    {
+      "words": [
+        ["signs symptoms", "symptoms signs"],
+        ["allergies"],
+        ["medications"],
+        [
+          "prior medical history", "previous medical history", "pertinent medical history",
+          "prior illness", "prior medical history"
+        ],
+        ["last oral intake", "last food", "last intake"],
+        ["events"]
+      ],
+      "desc": "Part of a detailed assessment"
+    },
+    {
+      "words": [
+        ["deformities", "deformity"],
+        ["contusions", "contusion"],
+        ["abrasions", "abrasion"],
+        ["penetrations", "punctures", "penetration", "puncture"],
+        ["burns", "burn"],
+        ["lacerations", "laceration"],
         ["swelling"],
         ["tenderness"],
-        ["instability"],
+        ["instability", "instabilities"],
         ["crepitus"]
       ],
       "desc": "Trauma assessment checks"
