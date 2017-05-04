@@ -16,6 +16,21 @@
         ["circulation"]
       ],
       "desc": "Primary assessment steps"
+    },
+    {
+      "words": [
+        ["deformities"],
+        ["contusions"],
+        ["abrasions"],
+        ["penetrations"],
+        ["burns"],
+        ["lacerations"],
+        ["swelling"],
+        ["tenderness"],
+        ["instability"],
+        ["crepitus"]
+      ],
+      "desc": "Trauma assessment checks"
     }
   ]
 }

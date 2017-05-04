@@ -123,6 +123,10 @@ input {
   border: 1px solid #d8d8d8;
 }
 
+.input-group-addon {
+  font-family: monospace;
+}
+
 input.correct {
   background-color: #a9e6a9;
   border: 1px solid green;

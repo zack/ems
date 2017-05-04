@@ -48,7 +48,7 @@ class Phrasebox extends Component {
 
   changeHandler(index, event) {
     let new_vals = this.state.values.slice();
-    new_vals[index] = event.target.value.trim();
+    new_vals[index] = event.target.value.trim().toLowerCase();
 
     this.setState((prevState, props) => ({
       values: new_vals,
