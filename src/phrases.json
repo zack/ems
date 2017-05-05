@@ -2,7 +2,7 @@
   [
     {
       "words": [
-        ["respitory", "respiration"],
+        ["respiratory", "respiration"],
         ["rate"]
       ],
       "desc": "How quickly your patient is breathing"
@@ -100,7 +100,7 @@
         ["dose"],
         ["inhaler"]
       ],
-      "desc": "Prescribed for use for respitory illness"
+      "desc": "Prescribed for use for respiratory illness"
     },
     {
       "words": [
