@@ -45,7 +45,6 @@ class App extends Component {
             <h1> EMS Acronyms & Initialisms </h1>
             <hr/>
             {modal}
-            <h6> click it ^ </h6>
           </div>
           <hr/>
         </div>
@@ -270,12 +269,12 @@ class FAQModal extends Component {
           bsSize="large"
           onClick={this.open.bind(this)}
         >
-          BIG FAQ BUTTON
+          Questions & Answers
         </Button>
 
         <Modal show={this.state.show} onHide={this.close.bind(this)}>
           <Modal.Header closeButton>
-            <Modal.Title> FAQ </Modal.Title>
+            <h3> Questions & Answers </h3>
           </Modal.Header>
 
           <Modal.Body>
@@ -287,7 +286,7 @@ class FAQModal extends Component {
 
             <h4> What if there are multiple answers? </h4>
             <p>
-              For letters that stand for multiple letters (like "P" in OPQRST),
+              For letters that stand for multiple words (like "P" in OPQRST),
               you should type in both words, separate by a space, in any other.
             </p>
 
@@ -296,7 +295,8 @@ class FAQModal extends Component {
               I did my best to use the most reasonable combination of words,
               which usually means I just took it directly out of the notes or
               off of the slides, but I also tried to include reasonable
-              alternatives.
+              alternatives. "Prior medical history," "Pertinent medical
+              history," etc.
             </p>
 
             <h4> What about something like the five Ps?</h4>
@@ -314,17 +314,24 @@ class FAQModal extends Component {
             </p>
 
             <h4>
-              What if I have questions, concerns, suggestions, accolades,
-              comments, or more money than I know how to spend by myself?
+              What's an initialism?
+            </h4>
+            <p>
+              Another word for an acronym that isn't pronounced as a word, like
+              "CHF" or "ABC."
+            </p>
+
+            <h4>
+              What if I have questions, concerns, suggestions, or comments?
             </h4>
             <p>
               Drop me a line; I'd love to hear from you! I can be reached at
-              <a href="linkto:zack@youngren.io"> zack@youngren.io </a>.
+              <a href="mailto:zack@youngren.io"> zack@youngren.io </a>.
             </p>
             </Modal.Body>
 
           <Modal.Footer>
-            <Button onClick={this.close.bind(this)}> Okay, thank you! You may now close! </Button>
+            <Button onClick={this.close.bind(this)}> Close this thing </Button>
           </Modal.Footer>
         </Modal>
       </div>

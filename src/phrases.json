@@ -63,8 +63,8 @@
     },
     {
       "words": [
-        ["history"],
-        ["present"],
+        ["history of"],
+        ["of present"],
         ["illness"]
       ],
       "desc": "Recent progression of the patient's state"
@@ -318,8 +318,8 @@
         ["allergies"],
         ["medications"],
         [
-          "prior medical history", "previous medical history", "pertinent medical history",
-          "prior illness", "prior medical history"
+          "prior medical history", "previous medical history",
+          "pertinent medical history", "prior illness"
         ],
         ["last oral intake", "last food", "last intake"],
         ["events"]
