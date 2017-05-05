@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Masonry from 'react-masonry-component';
-import { Button, FormControl, FormGroup, Glyphicon, InputGroup, PageHeader, Panel } from 'react-bootstrap';
+import { Button, FormControl, FormGroup, Glyphicon, InputGroup, Modal, Panel } from 'react-bootstrap';
 import './App.css';
 
 class App extends Component {
@@ -26,13 +26,14 @@ class App extends Component {
       />;
     });
 
-    const timer = <Timer />;
+    const timer = <Timer/>;
     const masonryOptions = {
       fitWidth: true,
       gutter: 15,
       itemSelector: '.phrasebox',
       transitionDuration: 0,
     };
+    const modal = <FAQModal/>
 
     return (
       <div className="App">
@@ -42,16 +43,9 @@ class App extends Component {
           </div>
           <div className="header-container">
             <h1> EMS Acronyms & Initialisms </h1>
-            <h1><small>
-                Some words are split up into two. As an example, for
-                supraventricular tachycardia, as SVT, you might expect to enter
-                "supra," "ventricular," "tachycardia." Some answers require two
-                words, in this case the words can be entered in either order
-                and no punctuation, articles, or extra words are necessary (so
-                enter "signs symptons" not "signs and symptons").  Please
-                direct mistakes, suggestions, and comments to zack@youngren.io.
-                <a href="https://github.com/zack/ems"> Code here. </a>
-            </small></h1>
+            <hr/>
+            {modal}
+            <h6> click it ^ </h6>
           </div>
           <hr/>
         </div>
@@ -243,6 +237,96 @@ class Timer extends Component {
             <Glyphicon className="flip-h" glyph="repeat" />
           </Button>
         </div>
+      </div>
+    );
+  }
+}
+
+class FAQModal extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      show: false
+    }
+  }
+
+  close() {
+    this.setState({
+      show: false
+    });
+  }
+
+  open() {
+    this.setState({
+      show: true
+    });
+  }
+
+  render() {
+    return (
+      <div>
+        <Button
+          bsStyle="primary"
+          bsSize="large"
+          onClick={this.open.bind(this)}
+        >
+          BIG FAQ BUTTON
+        </Button>
+
+        <Modal show={this.state.show} onHide={this.close.bind(this)}>
+          <Modal.Header closeButton>
+            <Modal.Title> FAQ </Modal.Title>
+          </Modal.Header>
+
+          <Modal.Body>
+            <h4> What do I do? </h4>
+            <p>
+              Type the words into the input boxes that correspond with the
+              letter for the specified initialism or acronym.
+            </p>
+
+            <h4> What if there are multiple answers? </h4>
+            <p>
+              For letters that stand for multiple letters (like "P" in OPQRST),
+              you should type in both words, separate by a space, in any other.
+            </p>
+
+            <h4> What if the answer is multiple words long? </h4>
+            <p>
+              I did my best to use the most reasonable combination of words,
+              which usually means I just took it directly out of the notes or
+              off of the slides, but I also tried to include reasonable
+              alternatives.
+            </p>
+
+            <h4> What about something like the five Ps?</h4>
+            <p>
+              Every input box will turn green for any correct "P" word. It will
+              turn green if you enter "pain" five times. Just... pick five
+              different words. :)
+            </p>
+
+            <h4>
+              Code?
+            </h4>
+            <p>
+              <a href="https://github.com/zack/ems" target="_blank"> Yep! </a>
+            </p>
+
+            <h4>
+              What if I have questions, concerns, suggestions, accolades,
+              comments, or more money than I know how to spend by myself?
+            </h4>
+            <p>
+              Drop me a line; I'd love to hear from you! I can be reached at
+              <a href="linkto:zack@youngren.io"> zack@youngren.io </a>.
+            </p>
+            </Modal.Body>
+
+          <Modal.Footer>
+            <Button onClick={this.close.bind(this)}> Okay, thank you! You may now close! </Button>
+          </Modal.Footer>
+        </Modal>
       </div>
     );
   }

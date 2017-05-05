@@ -16,6 +16,10 @@ body {
   text-align: center;
 }
 
+.text-left {
+  text-align: left;
+}
+
 .uppercase {
   text-transform: uppercase;
 }
