@@ -63,8 +63,8 @@
     },
     {
       "words": [
-        ["history of"],
-        ["of present"],
+        ["history", "history of"],
+        ["present", "of present"],
         ["illness"]
       ],
       "desc": "Recent progression of the patient's state"
@@ -79,7 +79,7 @@
     },
     {
       "words": [
-        ["systolic", "systole"],
+        ["systolic"],
         ["blood"],
         ["pressure"]
 
@@ -88,7 +88,7 @@
     },
     {
       "words": [
-        ["diastolic", "diastole"],
+        ["diastolic"],
         ["blood"],
         ["pressure"]
       ],
@@ -145,15 +145,15 @@
     {
       "words": [
         ["naso"],
-        ["pharyngeal", "pharynx"],
+        ["pharyngeal"],
         ["airway"]
       ],
       "desc": "For use only with unresponsive patients"
     },
     {
       "words": [
-        ["oro", "oral"],
-        ["pharyngeal", "pharynx"],
+        ["oro"],
+        ["pharyngeal"],
         ["airway"]
       ],
       "desc": "For use only with unresponsive patients"
@@ -215,7 +215,7 @@
       "words": [
         ["direct pressure"],
         ["elevation", "elevate"],
-        ["proximal pressure", "proximal pressure point", "proximal pressure point"],
+        ["proximal pressure", "proximal pressure point"],
         ["tourniquet"]
       ],
       "desc": "To control external bleeding"
