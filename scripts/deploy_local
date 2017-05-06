@@ -6,3 +6,4 @@ npm run build
 git add -f build
 git commit -am "New build"
 git push origin
+git checkout master
