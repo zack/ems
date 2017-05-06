@@ -1,32 +1,47 @@
 import React, { Component } from 'react';
 import Masonry from 'react-masonry-component';
 import { Button, FormControl, FormGroup, Glyphicon, InputGroup, Modal, Panel } from 'react-bootstrap';
+import 'bootstrap-css';
 import './App.css';
 
 class App extends Component {
   constructor() {
     super();
+    const phrases = this.addValuesToPhrases(require('./phrases.json').phrases);
     this.state = {
-      phrases: require('./phrases.json').phrases,
+      phrases: phrases,
     }
   };
 
-  render() {
-    // Array.sort modifies argument. Ew.
-    let temp_phrases = this.state.phrases.slice();
-    const random_phrases = temp_phrases.sort(() => { return 0.5 - Math.random() });
+  addValuesToPhrases(phrases) {
+    let phrases_with_values = phrases.slice()
+    phrases_with_values.forEach((phrase) =>
+      phrase.values = phrase.words.map(() => '')
+    )
+    phrases_with_values.sort(() => { return 0.5 - Math.random() })
+    return phrases_with_values;
+  }
 
-    const phraseboxes = random_phrases.map((phrase) => {
+  changeHandler(phrasebox_idx, line_idx, event) {
+    console.log(phrasebox_idx, line_idx, event);
+    let phrases = this.state.phrases;
+    phrases[phrasebox_idx].values[line_idx] = event.target.value;
+    this.setState({
+      phrases: phrases,
+    });
+  }
+
+  render() {
+    const phraseboxes = this.state.phrases.map((phrase, i) => {
       const initials = getInitials(phrase.words);
       return <Phrasebox
-        description={phrase.desc}
+        changeHandler={(line_idx, e) => this.changeHandler(i, line_idx, e)}
         initials={initials}
         key={initials}
-        word_arrays={phrase.words}
+        phrase={phrase}
       />;
     });
 
-    const timer = <Timer/>;
     const masonryOptions = {
       fitWidth: true,
       gutter: 15,
@@ -34,6 +49,7 @@ class App extends Component {
       transitionDuration: 0,
     };
     const modal = <FAQModal/>
+    const timer = <Timer/>;
 
     return (
       <div className="App">
@@ -48,69 +64,57 @@ class App extends Component {
           </div>
           <hr/>
         </div>
-        <div className="phrasebox-container">
-          <Masonry
-            className={'my-gallery-class'} // default ''
-            options={masonryOptions}
-            disableImagesLoaded={false} // default false
-            updateOnEachImageLoad={false} // default false and works only if disableImagesLoaded is false
-          >
-            {phraseboxes}
-          </Masonry>
-        </div>
+        <Masonry
+          className={'phrasebox-container'}
+          options={masonryOptions}
+          disableImagesLoaded={false}
+          updateOnEachImageLoad={false}
+        >
+          {phraseboxes}
+        </Masonry>
       </div>
     );
   }
 }
 
 class Phrasebox extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      values: this.props.word_arrays.map(() => ''),
-    }
-  }
-
   changeHandler(index, event) {
-    let new_vals = this.state.values.slice();
-    new_vals[index] = event.target.value.trim().toLowerCase();
-
-    this.setState((prevState, props) => ({
-      values: new_vals,
-    }));
+    console.log(index, event);
+    this.props.changeHandler(index, event);
   }
 
-  someValuesMatch(values) {
-    return this.props.word_arrays.reduce((acc, word_array, index) => {
-      return(acc || word_array.includes(values[index]));
+  someValuesMatch(phrase) {
+    return phrase.words.reduce((acc, word_array, index) => {
+      return(acc || word_array.includes(phrase.values[index]));
     }, false);
   }
 
-  allValuesMatch(values) {
-    return this.props.word_arrays.reduce((acc, word_array, index) => {
-      return(acc && word_array.includes(values[index]));
+  allValuesMatch(phrase) {
+    return phrase.words.reduce((acc, word_array, index) => {
+      return(acc && word_array.includes(phrase.values[index]));
     }, true);
   }
 
   render() {
     let style;
 
-    if (this.allValuesMatch(this.state.values)) {
+    if (this.allValuesMatch(this.props.phrase)) {
       style = 'success';
-    } else if (this.someValuesMatch(this.state.values)) {
+    } else if (this.someValuesMatch(this.props.phrase)) {
       style = 'warning';
     } else {
       style = 'danger';
     }
 
-    const header = <h2>{this.props.description}</h2>;
-    const lines = this.props.word_arrays.map((word_array, i) => {
+    const header = <h2>{this.props.phrase.desc}</h2>;
+    const lines = this.props.phrase.words.map((word_array, i) => {
       const first_word = word_array[0];
+      const letter = first_word[0]
       return <WordLine
         changeHandler={(e) => this.changeHandler(i, e)}
         key={`${this.props.initials}_${first_word}`}
-        letter={first_word[0]}
-        value={this.state.values[i]}
+        letter={letter}
+        value={this.props.phrase.values[i]}
         words={word_array}
       />;
     });
