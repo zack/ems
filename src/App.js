@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Masonry from 'react-masonry-component';
-import { Button, FormControl, FormGroup, Glyphicon, InputGroup, Modal, Panel } from 'react-bootstrap';
+import { Button, FormControl, FormGroup, Glyphicon, InputGroup, Modal, Panel, ProgressBar } from 'react-bootstrap';
 import 'bootstrap-css';
 import './App.css';
 
@@ -30,6 +30,27 @@ class App extends Component {
     });
   }
 
+  getProgressColors(phrases) {
+    var red = 0, yellow = 0, green = 0;
+
+    phrases.forEach((phrase) => {
+      const match = valueMatches(phrase);
+      if (match === 2) {
+        green += 1;
+      } else if (match === 1) {
+        yellow += 1;
+      } else {
+        red += 1;
+      }
+    });
+
+    return {
+      red: red / phrases.length * 100,
+      yellow: yellow / phrases.length * 100,
+      green: green / phrases.length * 100,
+    };
+  }
+
   render() {
     const phraseboxes = this.state.phrases.map((phrase, i) => {
       const initials = getInitials(phrase.words);
@@ -41,13 +62,20 @@ class App extends Component {
       />;
     });
 
+    const progressColors = this.getProgressColors(this.state.phrases);
+    const progressBarOptions = {
+      red: progressColors.red,
+      yellow: progressColors.yellow,
+      green: progressColors.green,
+    };
     const masonryOptions = {
       fitWidth: true,
       gutter: 15,
       itemSelector: '.phrasebox',
+      stamp: '.stamp',
       transitionDuration: 0,
     };
-    const modal = <FAQModal/>
+    const modal = <FAQModal/>;
     const timer = <Timer/>;
 
     return (
@@ -69,6 +97,7 @@ class App extends Component {
           disableImagesLoaded={false}
           updateOnEachImageLoad={false}
         >
+          {ProgressBars(progressBarOptions)}
           {phraseboxes}
         </Masonry>
       </div>
@@ -76,29 +105,28 @@ class App extends Component {
   }
 }
 
+function ProgressBars(props) {
+  return(
+    <ProgressBar className="stamp">
+      <ProgressBar bsStyle="success" now={props.green} key={1} />
+      <ProgressBar bsStyle="warning" now={props.yellow} key={2} />
+      <ProgressBar bsStyle="danger" now={props.red} key={3} />
+    </ProgressBar>
+  );
+}
+
 class Phrasebox extends Component {
   changeHandler(index, event) {
     this.props.changeHandler(index, event);
   }
 
-  someValuesMatch(phrase) {
-    return phrase.words.reduce((acc, word_array, index) => {
-      return(acc || word_array.includes(phrase.values[index]));
-    }, false);
-  }
-
-  allValuesMatch(phrase) {
-    return phrase.words.reduce((acc, word_array, index) => {
-      return(acc && word_array.includes(phrase.values[index]));
-    }, true);
-  }
-
   render() {
     let style;
 
-    if (this.allValuesMatch(this.props.phrase)) {
+
+    if (valueMatches(this.props.phrase) === 2) {
       style = 'success';
-    } else if (this.someValuesMatch(this.props.phrase)) {
+    } else if (valueMatches(this.props.phrase) === 3) {
       style = 'warning';
     } else {
       style = 'danger';
@@ -330,19 +358,34 @@ class FAQModal extends Component {
               Drop me a line; I'd love to hear from you! I can be reached at
               <a href="mailto:zack@youngren.io"> zack@youngren.io </a>.
             </p>
-            </Modal.Body>
+          </Modal.Body>
 
           <Modal.Footer>
             <Button onClick={this.close.bind(this)}> Close this thing </Button>
           </Modal.Footer>
         </Modal>
       </div>
-    );
-  }
+);
+}
 }
 
 function getInitials(words) {
   return words.map((word_array) => word_array[0][0]).join('');
+}
+
+// returns 0 for no mwatches, 1 for some match, 2 for full match
+function valueMatches(phrase) {
+  const arr = phrase.words.map((word_array, index) => {
+    return word_array.includes(phrase.values[index]);
+  });
+
+  if (!arr.includes(false)) {
+    return 2;
+  } else if (arr.includes(true)) {
+    return 1;
+  } else {
+    return 0;
+  }
 }
 
 export default App;
