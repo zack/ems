@@ -45,9 +45,9 @@ class App extends Component {
     });
 
     return {
-      red: red / phrases.length * 100,
-      yellow: yellow / phrases.length * 100,
-      green: green / phrases.length * 100,
+      red: red,
+      yellow: yellow,
+      green: green,
     };
   }
 
@@ -67,6 +67,7 @@ class App extends Component {
       red: progressColors.red,
       yellow: progressColors.yellow,
       green: progressColors.green,
+      total: this.state.phrases.length,
     };
     const masonryOptions = {
       fitWidth: true,
@@ -108,9 +109,9 @@ class App extends Component {
 function ProgressBars(props) {
   return(
     <ProgressBar className="stamp">
-      <ProgressBar bsStyle="success" now={props.green} key={1} />
-      <ProgressBar bsStyle="warning" now={props.yellow} key={2} />
-      <ProgressBar bsStyle="danger" now={props.red} key={3} />
+      <ProgressBar bsStyle="success" max={props.total} label={props.green} now={props.green} key={1} />
+      <ProgressBar bsStyle="warning" max={props.total} label={props.yellow} now={props.yellow} key={2} />
+      <ProgressBar bsStyle="danger" max={props.total} label={props.red} now={props.red} key={3} />
     </ProgressBar>
   );
 }
