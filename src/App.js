@@ -23,7 +23,6 @@ class App extends Component {
   }
 
   changeHandler(phrasebox_idx, line_idx, event) {
-    console.log(phrasebox_idx, line_idx, event);
     let phrases = this.state.phrases;
     phrases[phrasebox_idx].values[line_idx] = event.target.value;
     this.setState({
@@ -79,7 +78,6 @@ class App extends Component {
 
 class Phrasebox extends Component {
   changeHandler(index, event) {
-    console.log(index, event);
     this.props.changeHandler(index, event);
   }
 
