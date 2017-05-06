@@ -317,7 +317,9 @@ class FAQModal extends Component {
             <h4> What if there are multiple answers? </h4>
             <p>
               For letters that stand for multiple words (like "P" in OPQRST),
-              you should type in both words, separate by a space, in any other.
+              you should type in both words, separated by a space, in any order.
+              Others, like "P" in "DCAPBLSTIC," where the answers are synonyms,
+              will turn green when either word is entered.
             </p>
 
             <h4> What if the answer is multiple words long? </h4>
