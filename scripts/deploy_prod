@@ -1,0 +1,3 @@
+git checkout build
+git fetch origin
+git reset --hard origin/build

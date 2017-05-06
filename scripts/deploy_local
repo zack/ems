@@ -1,0 +1,8 @@
+#! /bin/bash
+
+git checkout build
+git merge --no-edit origin/master
+npm run build
+git add -f build
+git commit -am "New build"
+git push origin
