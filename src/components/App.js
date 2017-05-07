@@ -30,7 +30,7 @@ class App extends Component {
 
   changeHandler(phrasebox_idx, line_idx, event) {
     let phrases = this.state.phrases;
-    phrases[phrasebox_idx].values[line_idx] = event.target.value.toLowerCase();
+    phrases[phrasebox_idx].values[line_idx] = event.target.value.toLowerCase().trim();
     this.setState({
       phrases: phrases,
     });

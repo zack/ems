@@ -11,7 +11,7 @@ const PhraseBox = props => {
 
   if (Helpers.valueMatches(props.phrase) === 2) {
     style = 'success';
-  } else if (Helpers.valueMatches(props.phrase) === 3) {
+  } else if (Helpers.valueMatches(props.phrase) === 1) {
     style = 'warning';
   } else {
     style = 'danger';

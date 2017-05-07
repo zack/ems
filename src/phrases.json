@@ -278,7 +278,7 @@
         ["cardiac", "cardiogenic"],
         ["hypovolemic", "hypovolemia"],
         ["anaphylaxis"],
-        ["mabolic", "metabolism"],
+        ["metabolic", "metabolism"],
         ["psychogenic"],
         ["septic"]
       ],
@@ -296,8 +296,7 @@
         ["psychogenic", "psychological"],
         ["stroke"]
       ],
-      "desc": "Causes of altered mental status"
-    },
+      "desc": "Causes of altered mental status" },
     {
       "words": [
         ["onset"],
