@@ -1,7 +1,7 @@
 import React from 'react';
 import { ProgressBar } from 'react-bootstrap';
 
-const ProgressIndicator = ({red, green, yellow}) => {
+const ProgressIndicator = ({green, yellow, red}) => {
   const total = green + red + yellow;
   return(
     <ProgressBar className="stamp">

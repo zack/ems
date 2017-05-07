@@ -44,14 +44,11 @@ body {
 .timer.running {
   border-color: #3E8F3E;
   background-color: #DFF0D8;
-  /* background-image: linear-gradient(to bottom,#5cb85c 0,#419641 100%); */
 }
 
 .timer.stopped {
   border-color: #FAEBCC;
   background-color: #FCF8E3;
-  /* border-color: #E38D13; */
-  /* background-image: linear-gradient(to bottom,#f0ad4e 0,#eb9316 100%); */
 }
 
 .timer.secret {
@@ -124,7 +121,7 @@ input {
 }
 
 .input-group-addon {
-  width: 36px;
+  width: 38px;
 }
 
 input.correct {
