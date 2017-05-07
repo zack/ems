@@ -1,13 +1,15 @@
 import React, { Component } from 'react';
 import Masonry from 'react-masonry-component';
-import { Button, FormControl, FormGroup, Glyphicon, InputGroup, Modal, Panel, ProgressBar } from 'react-bootstrap';
+import { Button, FormControl, FormGroup, Glyphicon, InputGroup, Modal, Panel } from 'react-bootstrap';
 import 'bootstrap-css';
-import './App.css';
+import '../styles/App.css';
+
+import ProgressIndicator from './ProgressIndicator';
 
 class App extends Component {
   constructor() {
     super();
-    const phrases = this.addValuesToPhrases(require('./phrases.json').phrases);
+    const phrases = this.addValuesToPhrases(require('../phrases.json').phrases);
     this.state = {
       phrases: phrases,
     }
@@ -63,11 +65,10 @@ class App extends Component {
     });
 
     const progressColors = this.getProgressColors(this.state.phrases);
-    const progressBarOptions = {
-      red: progressColors.red,
-      yellow: progressColors.yellow,
+    const progressIndicatorOptions = {
       green: progressColors.green,
-      total: this.state.phrases.length,
+      yellow: progressColors.yellow,
+      red: progressColors.red,
     };
     const masonryOptions = {
       fitWidth: true,
@@ -98,22 +99,16 @@ class App extends Component {
           disableImagesLoaded={false}
           updateOnEachImageLoad={false}
         >
-          {ProgressBars(progressBarOptions)}
+          <ProgressIndicator
+            green={progressIndicatorOptions.green}
+            yellow={progressIndicatorOptions.yellow}
+            red={progressIndicatorOptions.red}
+          />
           {phraseboxes}
         </Masonry>
       </div>
     );
   }
-}
-
-function ProgressBars(props) {
-  return(
-    <ProgressBar className="stamp">
-      <ProgressBar bsStyle="success" max={props.total} label={props.green} now={props.green} key={1} />
-      <ProgressBar bsStyle="warning" max={props.total} label={props.yellow} now={props.yellow} key={2} />
-      <ProgressBar bsStyle="danger" max={props.total} label={props.red} now={props.red} key={3} />
-    </ProgressBar>
-  );
 }
 
 class Phrasebox extends Component {
