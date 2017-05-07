@@ -286,8 +286,14 @@
     },
     {
       "words": [
-        ["alcohol acidosis", "acidosis alcohol"],
-        ["epilepsy environment", "environmental epilepsy"],
+        [
+          "alcohol acidosis", "acidosis alcohol",
+          "alcohol acidotic", "acidotic alcohol"
+        ],
+        [
+          "epilepsy environment", "epilepsy environmental",
+          "environment epilepsy", "environmental epilepsy"
+        ],
         ["infection"],
         ["overdose"],
         ["uremia"],
