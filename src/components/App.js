@@ -8,7 +8,6 @@ import * as Helpers from '../helpers.js';
 import FAQModal from './FAQModal';
 import PhraseBox from './PhraseBox';
 import ProgressIndicator from './ProgressIndicator';
-import Timer from './Timer';
 
 class App extends Component {
   constructor() {
@@ -103,14 +102,10 @@ class App extends Component {
       onOpen={this.handleModalOpen.bind(this)}
       onClose={this.handleModalClose.bind(this)}
     />;
-    const timer = <Timer/>;
 
     return (
       <div className="App">
         <div className="text-center">
-          <div className="timer-container">
-            {timer}
-          </div>
           <div className="header-container">
             <h1> EMS Acronyms & Initialisms </h1>
             <hr/>

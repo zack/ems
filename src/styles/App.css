@@ -28,52 +28,6 @@ body {
   transform: scaleX(-1);
 }
 
-.timer-container {
-  display: inline-block;
-}
-
-.timer {
-  border-radius: 4px 0px 0px 4px;
-  border: 2px solid;
-  display: inline-block;
-  font-size: 36px;
-  height: 60px;
-  width: 214px;
-}
-
-.timer.running {
-  border-color: #3E8F3E;
-  background-color: #DFF0D8;
-}
-
-.timer.stopped {
-  border-color: #FAEBCC;
-  background-color: #FCF8E3;
-}
-
-.timer.secret {
-  color: rgba(0,0,0,0);
-}
-
-.timer-container .controls {
-  width: 34px;
-}
-
-.timer-container .controls button {
-  border-radius: 0;
-  height: 20px;
-  margin-bottom: -26px;
-  padding: 0px 10px;
-}
-
-.timer-container .controls button:first-child {
-  border-radius: 0px 3px 0px 0px;
-}
-
-.timer-container .controls button:last-child {
-  border-radius: 0px 0px 3px 0px;
-}
-
 .phrasebox-container {
   margin: 0 auto;
 }
