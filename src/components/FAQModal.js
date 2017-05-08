@@ -27,8 +27,8 @@ const FAQModal = ({ show, onOpen, onClose }) => {
           <h4> What if there are multiple words or answers? </h4>
           <p>
             If the answers are synonyms (like "P" in "DCAPBLSTIC"), either/any
-            word should work. If the answer is a collection of words ("P" in
-            "OPQRST") then you should enter both words in whatever way you
+            word should work. If the answer is a collection of words (like "P"
+            in "OPQRST") then you should enter both words in whatever way you
             choose. Punctuation and extra words/letters are generally ignored.
           </p>
 
@@ -58,8 +58,8 @@ const FAQModal = ({ show, onOpen, onClose }) => {
             What if I have questions, concerns, suggestions, or comments?
           </h4>
           <p>
-            Drop me a line; I'd love to hear from you! I can be reached at
-            <a href="mailto:zack@youngren.io"> zack@youngren.io </a>.
+            Drop me a line; I'd love to hear from you! I can be reached
+            at <a href="mailto:zack@youngren.io">zack@youngren.io</a>.
           </p>
         </Modal.Body>
 
