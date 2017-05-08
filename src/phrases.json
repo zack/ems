@@ -2,7 +2,7 @@
   [
     {
       "words": [
-        ["respirat(ory)|(ation)"],
+        ["respirat(ory)|(ion)"],
         ["rate"]
       ],
       "desc": "How quickly your patient is breathing"
