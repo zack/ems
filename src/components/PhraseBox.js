@@ -20,7 +20,7 @@ const PhraseBox = props => {
   const header = <h2>{props.phrase.desc}</h2>;
   const lines = props.phrase.words.map((word_array, i) => {
     const first_word = word_array[0];
-    const letter = first_word[0]
+    const letter = first_word[first_word.search(/\w/)]
     return <WordInput
       changeHandler={(e) => props.changeHandler(i, e)}
       key={`${props.initials}_${first_word}`}

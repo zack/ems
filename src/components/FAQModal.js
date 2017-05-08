@@ -24,28 +24,19 @@ const FAQModal = ({ show, onOpen, onClose }) => {
             letter for the specified initialism or acronym.
           </p>
 
-          <h4> What if there are multiple answers? </h4>
+          <h4> What if there are multiple words or answers? </h4>
           <p>
-            For letters that stand for multiple words (like "P" in OPQRST),
-            you should type in both words, separated by a space, in any order.
-            Others, like "P" in "DCAPBLSTIC," where the answers are synonyms,
-            will turn green when either word is entered.
-          </p>
-
-          <h4> What if the answer is multiple words long? </h4>
-          <p>
-            I did my best to use the most reasonable combination of words,
-            which usually means I just took it directly out of the notes or
-            off of the slides, but I also tried to include reasonable
-            alternatives. "Prior medical history," "Pertinent medical
-            history," etc.
+            If the answers are synonyms (like "P" in "DCAPBLSTIC"), either/any
+            word should work. If the answer is a collection of words ("P" in
+            "OPQRST") then you should enter both words in whatever way you
+            choose. Punctuation and extra words/letters are generally ignored.
           </p>
 
           <h4> What about something like the five Ps?</h4>
           <p>
             Every input box will turn green for any correct "P" word. It will
-            turn green if you enter "pain" five times. Just... pick five
-            different words. :D
+            turn green if you enter "pain" five times. Just pick five different
+            words.
           </p>
 
           <h4>

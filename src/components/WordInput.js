@@ -1,10 +1,12 @@
 import React from 'react';
 import { FormControl, FormGroup, InputGroup } from 'react-bootstrap';
 
+import * as Helpers from '../helpers.js';
+
 const WordInput = ({words, value, letter, changeHandler}) => {
   let validationState;
 
-  if (words.includes(value)) {
+  if (Helpers.matches_regex_in_array(words, value)) {
     validationState = 'success';
   } else if (value) {
     validationState = 'warning';

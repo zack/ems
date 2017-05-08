@@ -2,14 +2,14 @@
   [
     {
       "words": [
-        ["respiratory", "respiration"],
+        ["respirat(ory)|(ation)"],
         ["rate"]
       ],
       "desc": "How quickly your patient is breathing"
     },
     {
       "words": [
-        ["trachea", "tracheal"],
+        ["tracheal?"],
         ["deviation"]
       ],
       "desc": "Might be caused by a pneumothorax"
@@ -63,8 +63,8 @@
     },
     {
       "words": [
-        ["history", "history of"],
-        ["present", "of present"],
+        ["history"],
+        ["present"],
         ["illness"]
       ],
       "desc": "Recent progression of the patient's state"
@@ -136,7 +136,7 @@
     },
     {
       "words": [
-        ["cerebro", "cerebral"],
+        ["cerebr(o)|(al)"],
         ["spinal"],
         ["fluid"]
       ],
@@ -169,8 +169,8 @@
     {
       "words": [
         ["ice"],
-        ["compression", "compress"],
-        ["elevation", "elevate"],
+        ["compress"],
+        ["elevat(e)|(ion)"],
         ["splint"]
       ],
       "desc": "Common response for injuries"
@@ -178,8 +178,8 @@
     {
       "words": [
         ["alert"],
-        ["verbal", "vocal"],
-        ["pain", "painful"],
+        ["(verbal)|(vocal)"],
+        ["pain"],
         ["unresponsive"]
       ],
       "desc": "Alertness scale"
@@ -214,39 +214,39 @@
     {
       "words": [
         ["direct pressure"],
-        ["elevation", "elevate"],
-        ["proximal pressure", "proximal pressure point"],
+        ["elevat(e)|(ion)"],
+        ["proximal pressure"],
         ["tourniquet"]
       ],
       "desc": "To control external bleeding"
     },
     {
       "words": [
-        ["rigid", "rigidity"],
-        ["tender", "tenderness"],
+        ["rigid"],
+        ["tender"],
         ["guarding"],
         ["distension"],
-        ["mass", "masses"]
+        ["mass"]
       ],
       "desc": "Abdominal checks"
     },
     {
       "words": [
-        ["pupil", "pupils"],
-        ["equal", "equality"],
-        ["round", "roundness"],
-        ["reactive", "reactivity", "reactivity to"],
-        ["light", "to light"]
+        ["pupil"],
+        ["equal"],
+        ["round"],
+        ["reactiv(e)|(ity)"],
+        ["light"]
       ],
       "desc": "Eye checks"
     },
     {
       "words": [
         ["patient"],
-        ["medication", "medicine"],
+        ["medic(ine)|(ation)"],
         ["route"],
         ["time"],
-        ["dose", "dosage"]
+        ["dos(e)|(age)"]
       ],
       "desc": "The Five Rights"
     },
@@ -256,62 +256,53 @@
         ["lacrimation"],
         ["urination"],
         ["defacation"],
-        ["gastric", "gastric upset"],
+        ["gastric"],
         ["emesis"]
       ],
       "desc": "Organophosphate poisoning symptoms"
     },
     {
       "words": [
-        ["pain", "pallor", "pulse", "pulseless", "paralysis", "paralyse", "parasthesia"],
-        ["pallor", "pulse", "pulseless", "paralysis", "paralyse", "parasthesia", "pain"],
-        ["pulse", "pulseless", "paralysis", "paralyse", "parasthesia", "pain", "pallor"],
-        ["pulseless", "paralysis", "paralyse", "parasthesia", "pain", "pallor", "pulse"],
-        ["parasthesia", "pain", "pallor", "pulse", "pulseless", "paralysis", "paralyse"]
+        ["(pain)|(pallor)|(pulse)|(paralysis)|(paralyse)|(paresthesia)"],
+        ["(pallor)|(pulse)|(paralysis)|(paralyse)|(paresthesia)|(pain)"],
+        ["(pulse)|(paralysis)|(paralyse)|(paresthesia)|(pain)|(pallor)"],
+        ["(paralysis)|(paralyse)|(paresthesia)|(pain)|(pallor)|(pulse)"],
+        ["(paralyse)|(paresthesia)|(pain)|(pallor)|(pulse)|(paralysis)"]
       ],
       "desc": "Five Ps of compartment syndrome"
     },
     {
       "words": [
-        ["respiratory", "respiration"],
-        ["neuro", "neurogenic"],
-        ["cardiac", "cardiogenic"],
-        ["hypovolemic", "hypovolemia"],
+        ["respirat(ory)|(ion)"],
+        ["neuro"],
+        ["cardi(ac)|(ogenic)"],
+        ["hypovolemi[ca]"],
         ["anaphylaxis"],
-        ["metabolic", "metabolism"],
+        ["metaboli(c)|(sm)"],
         ["psychogenic"],
-        ["septic"]
+        ["septi[cs]"]
       ],
       "desc": "Types of shock"
     },
     {
       "words": [
-        [
-          "alcohol acidosis", "acidosis alcohol",
-          "alcohol acidotic", "acidotic alcohol"
-        ],
-        [
-          "epilepsy environment", "epilepsy environmental",
-          "environment epilepsy", "environmental epilepsy"
-        ],
+        ["(?=.*alcohol)(?=.*acido((sis)|(tic)))"],
+        ["(?=.*environment)(?=.*epilep((tic)|(sy)))"],
         ["infection"],
         ["overdose"],
         ["uremia"],
         ["trauma"],
         ["insulin"],
-        ["psychogenic", "psychological"],
+        ["psycho(genic)|(logical)"],
         ["stroke"]
       ],
       "desc": "Causes of altered mental status" },
     {
       "words": [
         ["onset"],
-        ["provoke palliate", "palliate provoke", "palliative provoke", "provoke palliative"],
+        ["(?=.*provoke)(?=.*palliat((e)|(ive)))"],
         ["quality"],
-        [
-          "region radiate", "region radiation", "region radiates",
-          "radiate region", "radiation region", "radiates region"
-        ],
+        ["(?=.*region)(?=.*radiat((e)|(ion)))"],
         ["severe", "severity"],
         ["time"]
       ],
@@ -322,10 +313,7 @@
         ["signs symptoms", "symptoms signs"],
         ["allergies"],
         ["medications"],
-        [
-          "prior medical history", "previous medical history",
-          "pertinent medical history", "prior illness"
-        ],
+        ["((prior)|(previous)|(pertinent)|(past)) ((medical history)|(illness))"],
         ["last oral intake", "last food", "last intake"],
         ["events"]
       ],
@@ -333,15 +321,15 @@
     },
     {
       "words": [
-        ["deformities", "deformity"],
-        ["contusions", "contusion"],
-        ["abrasions", "abrasion"],
-        ["penetrations", "punctures", "penetration", "puncture"],
-        ["burns", "burn"],
-        ["lacerations", "laceration"],
+        ["deformit(y)|(ies)"],
+        ["contusion"],
+        ["abrasion"],
+        ["(penetration)|(puncture)"],
+        ["burn"],
+        ["laceration"],
         ["swelling"],
         ["tenderness"],
-        ["instability", "instabilities"],
+        ["instabilit(y)|(ies)"],
         ["crepitus"]
       ],
       "desc": "Trauma assessment checks"
