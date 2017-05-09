@@ -2,335 +2,335 @@
   [
     {
       "words": [
-        ["respirat(ory)|(ion)"],
-        ["rate"]
+        "respirat(ory)|(ion)",
+        "rate"
       ],
       "desc": "How quickly your patient is breathing"
     },
     {
       "words": [
-        ["tracheal?"],
-        ["deviation"]
+        "tracheal?",
+        "deviation"
       ],
       "desc": "Might be caused by a pneumothorax"
     },
     {
       "words": [
-        ["myocardial"],
-        ["infarction"]
+        "myocardial",
+        "infarction"
       ],
       "desc": "Death of heart tissue"
     },
     {
       "words": [
-        ["body"],
-        ["substance"],
-        ["isolation"]
+        "body",
+        "substance",
+        "isolation"
       ],
       "desc": "Keeping you safe"
     },
     {
       "words": [
-        ["diabetic"],
-        ["keto"],
-        ["acidosis"]
+        "diabetic",
+        "keto",
+        "acidosis"
       ],
       "desc": "If your patient doesn't take their insulin, perhaps"
     },
     {
       "words": [
-        ["airway"],
-        ["breathing"],
-        ["circulation"]
+        "airway",
+        "breathing",
+        "circulation"
       ],
       "desc": "Primary assessment steps"
     },
     {
       "words": [
-        ["nature"],
-        ["of"],
-        ["illness"]
+        "nature",
+        "of",
+        "illness"
       ],
       "desc": "How your patient is sick"
     },
     {
       "words": [
-        ["mechanism"],
-        ["of"],
-        ["injury"]
+        "mechanism",
+        "of",
+        "injury"
       ],
       "desc": "How your patient was injured"
     },
     {
       "words": [
-        ["history"],
-        ["present"],
-        ["illness"]
+        "history",
+        "present",
+        "illness"
       ],
       "desc": "Recent progression of the patient's state"
     },
     {
       "words": [
-        ["bag"],
-        ["valve"],
-        ["mask"]
+        "bag",
+        "valve",
+        "mask"
       ],
       "desc": "Used to manually ventilate your patient"
     },
     {
       "words": [
-        ["systolic"],
-        ["blood"],
-        ["pressure"]
+        "systolic",
+        "blood",
+        "pressure"
 
       ],
       "desc": "Measured when the heart squeezes"
     },
     {
       "words": [
-        ["diastolic"],
-        ["blood"],
-        ["pressure"]
+        "diastolic",
+        "blood",
+        "pressure"
       ],
       "desc": "Measured when the heart relaxes"
     },
     {
       "words": [
-        ["metered"],
-        ["dose"],
-        ["inhaler"]
+        "metered",
+        "dose",
+        "inhaler"
       ],
       "desc": "Prescribed for use for respiratory illness"
     },
     {
       "words": [
-        ["jugular"],
-        ["vein"],
-        ["distension"]
+        "jugular",
+        "vein",
+        "distension"
       ],
       "desc": "Caused by backup of the blood to the heart"
     },
     {
       "words": [
-        ["circulation"],
-        ["sensation"],
-        ["movement"]
+        "circulation",
+        "sensation",
+        "movement"
       ],
       "desc": "Quick check for extremities"
     },
     {
       "words": [
-        ["level"],
-        ["of"],
-        ["consciousness"]
+        "level",
+        "of",
+        "consciousness"
       ],
       "desc": "Your patient's awareness"
     },
     {
       "words": [
-        ["rate"],
-        ["rhythm"],
-        ["quality"]
+        "rate",
+        "rhythm",
+        "quality"
       ],
       "desc": "Presentation of a patient's breathing or pulse"
     },
     {
       "words": [
-        ["cerebr(o)|(al)"],
-        ["spinal"],
-        ["fluid"]
+        "cerebr(o)|(al)",
+        "spinal",
+        "fluid"
       ],
       "desc": "Bad if it leaks"
     },
     {
       "words": [
-        ["naso"],
-        ["pharyngeal"],
-        ["airway"]
+        "naso",
+        "pharyngeal",
+        "airway"
       ],
       "desc": "For use only with unresponsive patients"
     },
     {
       "words": [
-        ["oro"],
-        ["pharyngeal"],
-        ["airway"]
+        "oro",
+        "pharyngeal",
+        "airway"
       ],
       "desc": "For use only with unresponsive patients"
     },
     {
       "words": [
-        ["congestive"],
-        ["heart"],
-        ["failure"]
+        "congestive",
+        "heart",
+        "failure"
       ],
       "desc": "Perhaps caused by an MI"
     },
     {
       "words": [
-        ["ice"],
-        ["compress"],
-        ["elevat(e)|(ion)"],
-        ["splint"]
+        "ice",
+        "compress",
+        "elevat(e)|(ion)",
+        "splint"
       ],
       "desc": "Common response for injuries"
     },
     {
       "words": [
-        ["alert"],
-        ["(verbal)|(vocal)"],
-        ["pain"],
-        ["unresponsive"]
+        "alert",
+        "(verbal)|(vocal)",
+        "pain",
+        "unresponsive"
       ],
       "desc": "Alertness scale"
     },
     {
       "words": [
-        ["chronic"],
-        ["obstructive"],
-        ["pulmonary"],
-        ["disease"]
+        "chronic",
+        "obstructive",
+        "pulmonary",
+        "disease"
       ],
       "desc": "Result of direct lung and airway damage"
     },
     {
       "words": [
-        ["high"],
-        ["altitude"],
-        ["pulmonary"],
-        ["edema"]
+        "high",
+        "altitude",
+        "pulmonary",
+        "edema"
       ],
       "desc": "From traveling to high altitudes"
     },
     {
       "words": [
-        ["high"],
-        ["altitude"],
-        ["cerebral"],
-        ["edema"]
+        "high",
+        "altitude",
+        "cerebral",
+        "edema"
       ],
       "desc": "From traveling to high altitudes"
     },
     {
       "words": [
-        ["direct pressure"],
-        ["elevat(e)|(ion)"],
-        ["proximal pressure"],
-        ["tourniquet"]
+        "direct pressure",
+        "elevat(e)|(ion)",
+        "proximal pressure",
+        "tourniquet"
       ],
       "desc": "To control external bleeding"
     },
     {
       "words": [
-        ["rigid"],
-        ["tender"],
-        ["guarding"],
-        ["distension"],
-        ["mass"]
+        "rigid",
+        "tender",
+        "guarding",
+        "distension",
+        "mass"
       ],
       "desc": "Abdominal checks"
     },
     {
       "words": [
-        ["pupil"],
-        ["equal"],
-        ["round"],
-        ["reactiv(e)|(ity)"],
-        ["light"]
+        "pupil",
+        "equal",
+        "round",
+        "reactiv(e)|(ity)",
+        "light"
       ],
       "desc": "Eye checks"
     },
     {
       "words": [
-        ["patient"],
-        ["medic(ine)|(ation)"],
-        ["route"],
-        ["time"],
-        ["dos(e)|(age)"]
+        "patient",
+        "medic(ine)|(ation)",
+        "route",
+        "time",
+        "dos(e)|(age)"
       ],
       "desc": "The Five Rights"
     },
     {
       "words": [
-        ["salivation"],
-        ["lacrimation"],
-        ["urination"],
-        ["defacation"],
-        ["gastric"],
-        ["emesis"]
+        "salivation",
+        "lacrimation",
+        "urination",
+        "defacation",
+        "gastric",
+        "emesis"
       ],
       "desc": "Organophosphate poisoning symptoms"
     },
     {
       "words": [
-        ["(pain)|(pallor)|(pulse)|(paralysis)|(paralyse)|(paresthesia)"],
-        ["(pallor)|(pulse)|(paralysis)|(paralyse)|(paresthesia)|(pain)"],
-        ["(pulse)|(paralysis)|(paralyse)|(paresthesia)|(pain)|(pallor)"],
-        ["(paralysis)|(paralyse)|(paresthesia)|(pain)|(pallor)|(pulse)"],
-        ["(paralyse)|(paresthesia)|(pain)|(pallor)|(pulse)|(paralysis)"]
+        "(pain)|(pallor)|(pulse)|(paralysis)|(paralyse)|(paresthesia)",
+        "(pallor)|(pulse)|(paralysis)|(paralyse)|(paresthesia)|(pain)",
+        "(pulse)|(paralysis)|(paralyse)|(paresthesia)|(pain)|(pallor)",
+        "(paralysis)|(paralyse)|(paresthesia)|(pain)|(pallor)|(pulse)",
+        "(paralyse)|(paresthesia)|(pain)|(pallor)|(pulse)|(paralysis)"
       ],
       "desc": "Five Ps of compartment syndrome"
     },
     {
       "words": [
-        ["respirat(ory)|(ion)"],
-        ["neuro"],
-        ["cardi(ac)|(ogenic)"],
-        ["hypovolemi[ca]"],
-        ["anaphylaxis"],
-        ["metaboli(c)|(sm)"],
-        ["psychogenic"],
-        ["sep(sis)|(tic)"]
+        "respirat(ory)|(ion)",
+        "neuro",
+        "cardi(ac)|(ogenic)",
+        "hypovolemi[ca]",
+        "anaphylaxis",
+        "metaboli(c)|(sm)",
+        "psychogenic",
+        "sep(sis)|(tic)"
       ],
       "desc": "Types of shock"
     },
     {
       "words": [
-        ["(?=.*alcohol)(?=.*acido((sis)|(tic)))"],
-        ["(?=.*environment)(?=.*epilep((tic)|(sy)))"],
-        ["infection"],
-        ["overdose"],
-        ["uremia"],
-        ["trauma"],
-        ["insulin"],
-        ["psycho(genic)|(logical)"],
-        ["stroke"]
+        "(?=.*alcohol)(?=.*acido((sis)|(tic)))",
+        "(?=.*environment)(?=.*epilep((tic)|(sy)))",
+        "infection",
+        "overdose",
+        "uremia",
+        "trauma",
+        "insulin",
+        "psycho(genic)|(logical)",
+        "stroke"
       ],
       "desc": "Causes of altered mental status" },
     {
       "words": [
-        ["onset"],
-        ["(?=.*provoke)(?=.*palliat((e)|(ive)))"],
-        ["quality"],
-        ["(?=.*region)(?=.*radiat((e)|(ion)))"],
-        ["severe", "severity"],
-        ["time"]
+        "onset",
+        "(?=.*provoke)(?=.*palliat((e)|(ive)))",
+        "quality",
+        "(?=.*region)(?=.*radiat((e)|(ion)))",
+        "sever(e)|(ity)",
+        "time"
       ],
       "desc": "Part of the focused assessment"
     },
     {
       "words": [
-        ["signs symptoms", "symptoms signs"],
-        ["allergies"],
-        ["medications"],
-        ["((prior)|(previous)|(pertinent)|(past)) ((medical history)|(illness))"],
-        ["last oral intake", "last food", "last intake"],
-        ["events"]
+        "(?=.*signs)(?=.*symptoms)",
+        "allergies",
+        "medications",
+        "((prior)|(previous)|(pertinent)|(past)) ((medical history)|(illness))",
+        "last ((oral intake)|(food)|(intake))",
+        "events"
       ],
       "desc": "Part of a detailed assessment"
     },
     {
       "words": [
-        ["deformit(y)|(ies)"],
-        ["contusion"],
-        ["abrasion"],
-        ["(penetration)|(puncture)"],
-        ["burn"],
-        ["laceration"],
-        ["swelling"],
-        ["tenderness"],
-        ["instabilit(y)|(ies)"],
-        ["crepitus"]
+        "deformit(y)|(ies)",
+        "contusion",
+        "abrasion",
+        "(penetration)|(puncture)",
+        "burn",
+        "laceration",
+        "swelling",
+        "tenderness",
+        "instabilit(y)|(ies)",
+        "crepitus"
       ],
       "desc": "Trauma assessment checks"
     }

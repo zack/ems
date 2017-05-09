@@ -70,7 +70,7 @@ class App extends Component {
   }
 
   getInitials(words) {
-    return words.map((word_array) => word_array[0][0]).join('');
+    return words.map((word) => { return(word[0]); }).join('');
   }
 
   render() {
