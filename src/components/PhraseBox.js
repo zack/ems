@@ -8,13 +8,12 @@ import WordInput from './WordInput';
 const PhraseBox = props => {
   let style;
 
-
   if (Helpers.valueMatches(props.phrase) === 2) {
     style = 'success';
   } else if (Helpers.valueMatches(props.phrase) === 1) {
     style = 'warning';
   } else {
-    style = 'danger';
+    style = 'default';
   }
 
   const header = <h2>{props.phrase.desc}</h2>;

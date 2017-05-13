@@ -1,8 +1,6 @@
 import React from 'react';
 import { FormControl, FormGroup, InputGroup } from 'react-bootstrap';
 
-import * as Helpers from '../helpers.js';
-
 const WordInput = ({word, value, letter, changeHandler}) => {
   let validationState;
 
@@ -10,8 +8,6 @@ const WordInput = ({word, value, letter, changeHandler}) => {
     validationState = 'success';
   } else if (value) {
     validationState = 'warning';
-  } else {
-    validationState = 'error';
   }
 
   return (
