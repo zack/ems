@@ -321,6 +321,26 @@
     },
     {
       "words": [
+        "appearance",
+        "pulse",
+        "grimace",
+        "activity",
+        "respirat(ory)|(ion)"
+      ],
+      "desc": "Newborn assessment check"
+    },
+    {
+      "words": [
+        "tone",
+        "interactiv(e)|(ity)",
+        "consol(e)|(able)|(ability)",
+        "look",
+        "speech"
+      ],
+      "desc": "Pediatric assessment check"
+    },
+    {
+      "words": [
         "deformit(y)|(ies)",
         "contusion",
         "abrasion",
