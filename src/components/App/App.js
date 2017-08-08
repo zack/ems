@@ -1,18 +1,18 @@
 import React, { Component } from 'react';
 import Masonry from 'react-masonry-component';
 import 'bootstrap-css';
-import '../styles/App.css';
+import './App.css';
 
-import * as Helpers from '../helpers.js';
+import * as Helpers from '../../helpers.js';
 
-import FAQModal from './FAQModal';
-import PhraseBox from './PhraseBox';
-import ProgressIndicator from './ProgressIndicator';
+import FAQModal from '../FAQModal/FAQModal.js';
+import PhraseBox from '../PhraseBox/PhraseBox.js';
+import ProgressIndicator from '../ProgressIndicator/ProgressIndicator.js';
 
 class App extends Component {
   constructor() {
     super();
-    const phrases = this.addValuesToPhrases(require('../phrases.json').phrases);
+    const phrases = this.addValuesToPhrases(require('../../phrases.json').phrases);
     this.state = {
       phrases: phrases,
       showModal: false,

@@ -1,9 +1,9 @@
 import React from 'react';
 import { Panel } from 'react-bootstrap';
 
-import * as Helpers from '../helpers.js';
+import * as Helpers from '../../helpers.js';
 
-import WordInput from './WordInput';
+import WordInput from '../WordInput/WordInput.js';
 
 const PhraseBox = props => {
   let style;
