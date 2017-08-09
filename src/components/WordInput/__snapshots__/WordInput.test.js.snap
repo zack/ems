@@ -1,0 +1,73 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<WordInput /> Reflects the input in its style 1`] = `
+<div
+  className="form-group"
+>
+  <span
+    className="input-group"
+  >
+    <span
+      className="input-group-addon"
+    >
+      <strong>
+        T
+      </strong>
+    </span>
+    <input
+      className="form-control"
+      id={undefined}
+      onChange={undefined}
+      type="text"
+    />
+  </span>
+</div>
+`;
+
+exports[`<WordInput /> Reflects the input in its style 2`] = `
+<div
+  className="form-group has-warning"
+>
+  <span
+    className="input-group"
+  >
+    <span
+      className="input-group-addon"
+    >
+      <strong>
+        T
+      </strong>
+    </span>
+    <input
+      className="form-control"
+      id={undefined}
+      onChange={undefined}
+      type="text"
+    />
+  </span>
+</div>
+`;
+
+exports[`<WordInput /> Reflects the input in its style 3`] = `
+<div
+  className="form-group has-success"
+>
+  <span
+    className="input-group"
+  >
+    <span
+      className="input-group-addon"
+    >
+      <strong>
+        T
+      </strong>
+    </span>
+    <input
+      className="form-control"
+      id={undefined}
+      onChange={undefined}
+      type="text"
+    />
+  </span>
+</div>
+`;

@@ -1,17 +1,19 @@
 import React from 'react';
 import { FormControl, FormGroup, InputGroup } from 'react-bootstrap';
 
-const WordInput = ({word, value, letter, changeHandler}) => {
-  let validationState;
-
+var getValidationState = (word, value) => {
   if (new RegExp(word).test(value)) {
-    validationState = 'success';
+    return('success');
   } else if (value) {
-    validationState = 'warning';
+    return('warning');
+  } else {
+    return(null);
   }
+}
 
+const WordInput = ({word, value, letter, changeHandler}) => {
   return (
-    <FormGroup validationState={validationState}>
+    <FormGroup validationState={getValidationState(word, value)}>
       <InputGroup>
         <InputGroup.Addon>
           <strong>{letter.toUpperCase()}</strong>
